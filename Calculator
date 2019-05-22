@@ -1,0 +1,122 @@
+#Repeating Calculator:
+def main():
+    error_message="Error: You must enter a valid number. Press enter to continue..."
+    #Creates an infinite loop.
+    while True: 
+
+        #Ask the user to enter a number.
+        number1=input("What is the first number in the calculation?\n")
+
+        #Check to make sure that entry is a number:
+        try: number1=float(number1)
+
+        #If the answer is not a number...
+        except:
+            #Display an error message:
+            input(error_message)
+            #Restart this loop
+            continue
+
+        #Creates another loop that we will manually break out of later.
+        while True: 
+            #Ask the user what type of mathematical operation to perform
+            operation=input('''What type of operation would you like to perform with this number?
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+''')
+
+            #Check to make sure that the entry is an integer.
+            try: operation=int(operation)
+
+            #If the answer is not a number...
+            except:
+                #Display an error message:
+                input(error_message)
+                #Then restart this loop for the user to try again:
+                continue
+
+            #If the user entered is not 1, 2, 3, or 4...
+            if operation not in range(1,5):
+                #Display an error message:
+                input("Error: You must enter a valid number from 1 to 4. Press enter to continue...")
+                #Then restart this loop for the user to try again:
+                continue
+            #If no errors are detected, then break the loop and allow the user to continue:
+            else:break
+
+
+        while True:
+            #Ask the user to enter a number.
+            number2=input("What is the second number in the calculation?\n")
+
+            #Check to make sure that entry is a number:
+            try:number2=float(number2)
+                
+            #If the answer is not a number...
+            except:
+                #Display an error message:
+                input(error_message)
+                #Restart this loop:
+                continue
+
+            #If the user tries to divide by zero...
+            if operation==4 and number2==0:
+                #Display an error message:
+                input("Error: It is not possible to divide by zero, please try a different number.\n")
+                #Restart this loop:
+                continue
+        
+            #If the first number is a whole number, convert it from a float to an integer:
+            if number1==int(number1):number1=int(number1)
+
+            #If the second number is a whole number, convert it from a float to an integer:
+            if number2==int(number2):number2=int(number2)
+            
+
+            #If the user had previously chosen to add the numbers...
+            if operation==1:
+                    #Perform addition on the numbers:
+                    total=number1+number2
+                    #Set the math terminology to "sum":
+                    phrase="sum"
+            #If the user had previously chosen to subtract the numbers...
+            elif operation==2:
+                    #Perform subtraction on the numbers:
+                    total=number1-number2
+                    #Set the math terminology to "difference":
+                    phrase="difference"
+            #If the user had previously chosen to multiply the numbers...
+            elif operation==3:
+                #Perform multiplication on the numbers:
+                total=number1*number2
+                #Set the math terminology to "product":
+                phrase="product"
+            #If the user had previously chosen to divide the numbers...
+            elif operation==4:
+                #Perform division on the numbers:
+                total=number1/number2
+                #Set the math terminology to "quotient":
+                phrase="quotient"
+            #If the developer made a mistake that couldn't be handled by the source code...
+            else:
+                #Display an error message:
+                input("Error: Developer error detected.")
+                #Break out of the current loop. This will cause the program to reach it's end,
+                #and for the main loop to begin again:
+                break
+            #If the total is a whole number, convert it from a float into an integer:
+            if total==int(total):total=int(total)
+            
+            #Compile and display a phrase that accurately describes the problem and the grand total:
+            print("The %s of %s and %s is %s"%(phrase,number1,number2,total))
+            #Prompt the user to press enter if they wish to restart the program:
+            input("Press enter to calculate another set of numbers...")
+            #Break out of the current loop so that the program can restart at the beginning:
+            break
+            #The program reaches it's end, and then restarts by beginning the main loop again.
+
+#The program won't actually start until it reaches this line of code. This may seem strange, but getting
+#into the habit of doing this will pay off later when you create more advanced projects.
+if __name__=="__main__": main()
