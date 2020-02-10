@@ -21,22 +21,22 @@ while True:
     
     #If player chooses Rock:
     if player_choice==1:
-        if computer_choice=="Rock":print("Draw...Computer chose rock")
+        if computer_choice=="Rock":print("Draw...Computer chose rock.")
         elif computer_choice=="Paper":
-            print("Loss...Computer chose paper")
+            print("Loss...Computer chose paper.")
             computer_score+=1
         elif computer_choice=="Scissors":
-            print("Win...Computer chose scissors")
+            print("Win...Computer chose scissors.")
             player_score+=1
         
     #If player chooses Paper:
     elif player_choice==2:
         if computer_choice=="Rock":
-            print("Win...Computer chose paper")
+            print("Win...Computer chose paper.")
             player_score+=1
         elif computer_choice=="Paper":print("Draw...Computer chose paper.")
         elif computer_choice=="Scissors":
-            print("Loss...Computer chose scissors")
+            print("Loss...Computer chose scissors.")
             computer_score+=1
     
     #If player chooses Scissors:
