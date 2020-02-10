@@ -1,9 +1,13 @@
-#Rock Paper Scissors Python Console Script
+###########################################
+#Rock Paper Scissors Python Console Script#
+###########################################
 
+#Set up the game:
 import random
 choices=["Rock","Paper","Scissors"]
 computer_score,player_score=0,0
 
+#Prompt the player to choose rock, paper, or scissors:
 while True:
     computer_choice=random.choice(choices)
     player_choice=input("Please choose:\n1.)Rock\n2.)Paper\n3.)Scissors\n\n")
@@ -15,6 +19,7 @@ while True:
     except: print("That is not a valid selection. Please enter 1,2, or 3...")
     print("\n"*10)
     
+    #If player chooses Rock:
     if player_choice==1:
         if computer_choice=="Rock":print("Draw...Computer chose rock")
         elif computer_choice=="Paper":
@@ -23,7 +28,8 @@ while True:
         elif computer_choice=="Scissors":
             print("Win...Computer chose scissors")
             player_score+=1
-            
+        
+    #If player chooses Paper:
     elif player_choice==2:
         if computer_choice=="Rock":
             print("Win...Computer chose paper")
@@ -33,6 +39,7 @@ while True:
             print("Loss...Computer chose scissors")
             computer_score+=1
     
+    #If player chooses Scissors:
     elif player_choice==3:
         if computer_choice=="Rock":
             print("Loss...Computer chose rock.")
@@ -41,6 +48,7 @@ while True:
             print("Win...Computer chose paper.")
             player_score+=1
         elif computer_choice=="Scissors":print("Draw...Computer chose scissors.")
-        
+
+    #Display the player and computer's scores, then clear the console for the next game:
     print("\nPlayer Score:  ",str(player_score))
     print("Computer Score:",str(computer_score),"\n"*20)
