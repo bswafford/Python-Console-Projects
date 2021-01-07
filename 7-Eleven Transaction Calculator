@@ -1,0 +1,33 @@
+starting1,starting2,ending1,ending2,total,reg1,reg2=0,0,0,0,0,0,0
+
+while True:
+	try:
+		starting1=int(input("Register #1 starting number: "))
+		break
+	except: print("That entry was not valid. Please try again")
+	
+while True:
+	try:
+		ending1=int(input("Register #1 ending number: "))
+		break
+	except: print("That entry was not valid. Please try again")
+	
+while True:
+	try:
+		starting2=int(input("Register #2 starting number: "))
+		break
+	except: print("That entry was not valid. Please try again")
+	
+while True:
+	try:
+		ending2=int(input("Register #2 ending number: "))
+		break
+	except: print("That entry was not valid. Please try again")
+	
+reg1=ending1-starting1
+reg2=ending2-starting2
+total=reg1+reg2
+print("\nRegister #1:",str(reg1))
+print("Register #2:",str(reg2))
+print("\nTotal:",str(total))
+	
