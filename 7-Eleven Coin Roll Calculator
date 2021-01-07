@@ -1,0 +1,26 @@
+while True:
+	Q,Q2,D,D2,N,N2,P,P2,total=0,0,0,0,0,0,0,0,0
+	print("Enter the number of coin rolls.")
+	try:Q=int(input('Q: '))
+	except:pass
+	try:D=int(input('D: '))
+	except:pass
+	try:N=int(input('N: '))
+	except:pass
+	try:P=int(input('P: '))
+	except:pass
+	Q2=Q*10
+	D2=D*5
+	N2=N*2
+	P2=P*.5
+	total=Q2+D2+N2+P2
+	print('\nQ:',str(Q),'rolls at',str("${:,.2f}".			format(Q2)))
+	print('D:',str(D),'rolls at',str("${:,.2f}".			format(D2)))
+	print('N:',str(N),'rolls at',str("${:,.2f}".			format(N2)))
+	print('P:',str(P),'rolls at',str("${:,.2f}".			format(P2)))
+	
+	
+	print('\nTotal:',str("${:,.2f}"
+.format(total)))
+	x=input('\n'*2+"Press enter to run program again...")
+	print('\n'*5)
