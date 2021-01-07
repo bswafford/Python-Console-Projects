@@ -1,0 +1,35 @@
+#Set hours and minutes to 0.
+hours=0
+minutes=0
+#Ask for the work time of each shift and add them up.
+while True:
+	choice=input("\nPlease enter work time (hh:mm) or \npress enter to finish.\n")
+	if choice=="": break
+	else:
+		if len(choice)==5 and choice[2]==":":
+			hh=choice[0]+choice[1]
+			mm=choice[3]+choice[4]
+			hours=hours+int(hh)
+			minutes=minutes+int(mm)
+		else: print("That was not a valid entry. Please try again. \n")
+#Take the total work time and convert it to proper format.		
+converted_hours=minutes//60
+hours=hours+converted_hours
+minutes=minutes%60
+print("Total time worked:",str(hours)+":"+str(minutes).zfill(2)+"\n")
+#Hourly pay rate
+pay_rate=13
+#Percentage deducted from gross pay
+tax_rate=.19
+#Error checking to ensure proper syntax of hours and minutes worked:
+while True:
+	try:
+		g_shifts=int(input("How many grave yard shifts did you \nwork this pay period? "))
+		break
+	except:print("That entry was not valid. Please try again.")
+	
+gross_income=((g_shifts+hours)*60+minutes)*((pay_rate/60))
+net_income=((g_shifts+hours)*60+minutes)*((pay_rate/60)*(1-tax_rate))
+print("\nGross income:","${:,.2f}".format(gross_income),"\nNet income:","${:,.2f}".format(net_income))
+
+#Progam can be improved by adding additional error checking to questions to ensure that a number has been entered, and not a string.
