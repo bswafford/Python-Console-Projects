@@ -1,0 +1,7 @@
+try:
+	print("Hi Wayne! This program has continued running....")
+	qweoriuasdfknfasdf
+	zxwerkjsdfoijrgthkjsdbf
+	i385908uhsdihlkj490
+except: pass
+finally: print("...despite containing bad lines of code!\nThe program will now successfully end.")
